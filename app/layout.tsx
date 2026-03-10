@@ -26,7 +26,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mustafa Sayyed | Project Manager & Mechanical Engineer",
+  title: "Mustafa",
   description: "Graduate Mechanical Engineer & Project Manager based in Dublin, Ireland.",
 };
 
