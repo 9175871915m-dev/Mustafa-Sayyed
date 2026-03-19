@@ -1,6 +1,7 @@
 "use client";
 
-
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection";
 import DualIdentitySection from "@/components/DualIdentitySection";
@@ -13,6 +14,14 @@ import PhotographySection from "@/components/PhotographySection";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!localStorage.getItem("intro_seen")) {
+      router.replace("/intro");
+    }
+  }, [router]);
+
   return (
     <div className="min-h-screen text-[var(--color-theme-text-primary)]">
       <NavBar />
