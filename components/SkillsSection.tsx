@@ -13,7 +13,8 @@ const SKILL_GROUPS = [
   },
   {
     title: "Supply Chain & Logistics",
-    tags: ["Freight Pricing (FTL/LTL/Intermodal)", "Carrier Management", "Route Optimisation", "Demand Forecasting", "Procurement", "Contract Negotiation"]
+    tags: ["Freight Pricing (FTL/LTL/Intermodal)", "Carrier Management", "Route Optimisation", "Demand Forecasting", "Procurement", "Contract Negotiation"],
+    note: "Active — led multiple live negotiation exercises, MSc 2026"
   },
   {
     title: "Digital & Tools",
@@ -88,6 +89,11 @@ export default function SkillsSection() {
                 </span>
               ))}
             </div>
+            {(group as any).note && (
+              <p className="mt-4 font-inter text-xs italic text-[var(--color-theme-text-secondary)] opacity-70">
+                {(group as any).note}
+              </p>
+            )}
           </div>
         ))}
       </div>

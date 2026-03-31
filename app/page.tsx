@@ -9,6 +9,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import EducationSection from "@/components/EducationSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import WritingSection from "@/components/WritingSection";
 import ReferencesSection from "@/components/ReferencesSection";
 import PhotographySection from "@/components/PhotographySection";
 import ContactSection from "@/components/ContactSection";
@@ -32,6 +33,7 @@ export default function Home() {
         <ExperienceSection />
         <EducationSection />
         <ProjectsSection />
+        <WritingSection />
         <ReferencesSection />
         <PhotographySection />
         <ContactSection />

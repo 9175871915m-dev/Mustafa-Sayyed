@@ -131,13 +131,13 @@ export default function ProjectsSection() {
               )}
             </div>
 
-            {proj.status === "PDF Deck" ? (
+            {(proj.status === "PDF Deck" || proj.status === "Essay") ? (
               <a 
                 href={proj.pdfLink} 
                 target="_blank" 
                 rel="noreferrer"
                 className="block text-center bg-[var(--color-theme-primary)] text-[var(--color-theme-surface)] font-inter font-bold uppercase tracking-widest text-sm py-4 hover:bg-[var(--color-theme-secondary)] transition-colors"
-                style={{ transform: "translateZ(20px)" }} // for the 3D pop effect
+                style={{ transform: "translateZ(20px)" }}
               >
                 View Deck
               </a>
