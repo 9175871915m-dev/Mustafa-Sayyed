@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🌐 mustafa-sayyed.com: Personal Portfolio
 
-## Getting Started
+Engineering precision meets project leadership.
 
-First, run the development server:
+Live portfolio of Mustafa Sayyed, Graduate Mechanical Engineer and Project Manager based in Dublin, Ireland. Built to present professional experience, live consultancy work, academic writing, and photography in a single, clean interface.
+🔗 mustafa-sayyed.com
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+📸 Preview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit mustafa-sayyed.com to see the live site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+⚙️ Tech Stack
+LayerTechnologyFrameworkNext.js (React)StylingTailwind CSSDeploymentVercelAssetsNext.js Image Optimisation
 
-## Learn More
+📂 Sections
 
-To learn more about Next.js, take a look at the following resources:
+Hero: Headline, dual discipline framing (Engineer + PM), CV download
+Skills: Engineering & CAD, Project Management, Supply Chain, Digital Tools
+Experience: Reverse chronological work history across engineering, logistics, sales, and operations
+Projects: Featured work including the live Expleo × UCD CSRD consultancy
+Writing: Academic papers and decks, including a First Class polemic report on climate governance
+Personality: Photography taken around Dublin on the commute
+Testimonials: Recommendations from managers and colleagues
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🧑‍💼 My Role
+This site was designed and scoped by me, and developed in collaboration with Antigravity. I directed the structure, content, tone, and all written copy. The site reflects my professional positioning strategy for the Irish graduate job market (2025–2026).
 
-## Deploy on Vercel
+📬 Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📧 sayyedmustafa7452@gmail.com
+🔗 LinkedIn
+🌐 mustafa-sayyed.com
