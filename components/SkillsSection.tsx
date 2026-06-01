@@ -18,7 +18,15 @@ const SKILL_GROUPS = [
   },
   {
     title: "Digital & Tools",
-    tags: ["MS365", "BIM/Revit (learning)", "Data Analysis", "CRM Systems", "Presentation Design"]
+    tags: [
+      { name: "Jira", note: "Atlassian Jira Fundamentals and Perfection Badges Certified", isNew: true },
+      { name: "Power BI", note: "Microsoft Learn — Fundamentals and Report Building", isNew: true },
+      { name: "MS365" },
+      { name: "BIM/Revit" },
+      { name: "Data Analysis" },
+      { name: "CRM Systems" },
+      { name: "Presentation Design" }
+    ]
   }
 ];
 
@@ -80,14 +88,36 @@ export default function SkillsSection() {
               {gIdx + 1}. {group.title}
             </h3>
             <div className="flex flex-wrap gap-3">
-              {group.tags.map((tag, tIdx) => (
-                <span 
-                  key={tIdx} 
-                  className="skill-tag inline-block px-3 py-1.5 bg-[var(--color-theme-bg)] border border-[var(--color-theme-divider)] font-jetbrains text-xs tracking-wide text-[var(--color-theme-text-primary)] whitespace-nowrap"
-                >
-                  {tag}
-                </span>
-              ))}
+              {group.tags.map((tagObj, tIdx) => {
+                const isObject = typeof tagObj === "object" && tagObj !== null;
+                const name = isObject ? (tagObj as any).name : (tagObj as string);
+                const note = isObject ? (tagObj as any).note : undefined;
+                const isNew = isObject ? !!(tagObj as any).isNew : false;
+
+                return (
+                  <span 
+                    key={tIdx} 
+                    title={note}
+                    className={`skill-tag inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--color-theme-bg)] font-jetbrains text-xs tracking-wide text-[var(--color-theme-text-primary)] whitespace-nowrap relative group/tag transition-all duration-300 ${
+                      isNew 
+                        ? "border border-[var(--color-theme-primary)] hover:border-[var(--color-theme-highlight)] shadow-[0_2px_8px_rgba(107,63,31,0.06)]" 
+                        : "border border-[var(--color-theme-divider)]"
+                    }`}
+                  >
+                    {isNew && (
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-theme-primary)] animate-pulse" />
+                    )}
+                    {name}
+                    {note && (
+                      <span className="absolute bottom-[calc(100%+8px)] left-1/2 transform -translate-x-1/2 hidden group-hover/tag:block bg-[var(--color-theme-surface)] border border-[var(--color-theme-primary)] text-[10px] text-[var(--color-theme-text-primary)] px-3 py-2 shadow-[0_10px_30px_rgba(107,63,31,0.15)] z-20 whitespace-normal min-w-[220px] text-center leading-relaxed">
+                        <span className="font-bold text-[var(--color-theme-primary)] block mb-1">Badge Certified</span>
+                        {note}
+                        <span className="absolute top-full left-1/2 transform -translate-x-1/2 border-[6px] border-transparent border-t-[var(--color-theme-primary)] w-0 h-0" />
+                      </span>
+                    )}
+                  </span>
+                );
+              })}
             </div>
             {(group as any).note && (
               <p className="mt-4 font-inter text-xs italic text-[var(--color-theme-text-secondary)] opacity-70">

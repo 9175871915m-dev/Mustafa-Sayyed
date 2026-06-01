@@ -9,7 +9,17 @@ const PAPERS_DATA = [
     role: "Author",
     grade: "First Class (A)",
     desc: "A rigorous, evidence-driven argument for why India's oldest trade union must fundamentally reform its governance model in the face of climate change — or risk irrelevance.",
+    tags: ["Author", "Part I", "Governance", "Labour"],
     pdfLink: "/aituc-polemic.pdf",
+  },
+  {
+    title: "Climate Governance and the Indian Labour Crisis — AITUC at the Crossroads: Part II",
+    subtitle: "Graduate Research Report · MSc Project Management, UCD · 2026",
+    role: "Author",
+    grade: "MSc 2026",
+    desc: "The second instalment of the AITUC series. Where Part I made the governance argument, Part II builds the implementation architecture — examining institutional reform pathways, platform labour disclosure standards, and India's obligations under a warming climate.",
+    tags: ["Author", "Part II", "Policy", "Labour"],
+    pdfLink: "/AITUC Part 2 How.pdf",
   }
 ];
 
@@ -114,6 +124,17 @@ export default function WritingSection() {
               <p className="font-inter text-[var(--color-theme-text-secondary)] leading-relaxed mb-8">
                 {paper.desc}
               </p>
+
+              {/* Tags */}
+              {paper.tags && (
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {paper.tags.map((tag, t) => (
+                    <span key={t} className="font-jetbrains text-[10px] uppercase text-[var(--color-theme-primary)]">
+                      [{tag}]
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* CTA */}

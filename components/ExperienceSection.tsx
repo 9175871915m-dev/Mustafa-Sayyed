@@ -6,9 +6,9 @@ const EXPERIENCE_DATA = [
   {
     role: "Project Manager — CSRD Consultancy",
     company: "University College Dublin / Expleo Group",
-    date: "Jan 2026 – Present",
-    desc: "Leading live student-industry consultancy on CSRD compliance. Full project lifecycle: scoping, stakeholder mapping, risk register, deliverable tracking. Cross-functional MSc team coordinated with Expleo industry representatives.",
-    tags: ["Live Project", "Consultancy", "Sustainability"]
+    date: "Jan 2026 – May 2026",
+    desc: "Led a live industry consultancy with Expleo Group Ireland through UCD Smurfit Business School. Delivered a 49-page CSRD Transformation Framework as Project Manager — covering compliance architecture, stakeholder mapping, and a phased implementation roadmap. Received written feedback from Expleo's PPM Practice Lead describing the work as 'high-quality and near-production-ready.'",
+    tags: ["Completed", "Consultancy", "Sustainability"]
   },
   {
     role: "Mechanical Project Engineer — Operations & Quality",

@@ -6,10 +6,10 @@ const PROJECTS_DATA = [
   {
     title: "Expleo x UCD CSRD Consultancy",
     role: "Project Manager",
-    status: "Live",
-    pdfLink: "#",
-    desc: "Industry-partnered consultancy on CSRD compliance for Expleo.",
-    tags: ["Live", "PM", "Sustainability"]
+    status: "Completed",
+    pdfLink: "/CSRD Consultancy business plan.pdf",
+    desc: "Led a live industry consultancy with Expleo Group Ireland through UCD Smurfit Business School. Delivered a 49-page CSRD Transformation Framework as Project Manager — covering compliance architecture, stakeholder mapping, and a phased implementation roadmap. Received written feedback from Expleo's PPM Practice Lead describing the work as 'high-quality and near-production-ready.'",
+    tags: ["Completed", "PM", "Sustainability", "Consultancy"]
   },
   {
     title: "Vertical Integration & Procurement Strategy",
@@ -131,7 +131,7 @@ export default function ProjectsSection() {
               )}
             </div>
 
-            {(proj.status === "PDF Deck" || proj.status === "Essay") ? (
+            {proj.pdfLink && proj.pdfLink !== "#" ? (
               <a 
                 href={proj.pdfLink} 
                 target="_blank" 
@@ -139,7 +139,7 @@ export default function ProjectsSection() {
                 className="block text-center bg-[var(--color-theme-primary)] text-[var(--color-theme-surface)] font-inter font-bold uppercase tracking-widest text-sm py-4 hover:bg-[var(--color-theme-secondary)] transition-colors"
                 style={{ transform: "translateZ(20px)" }}
               >
-                View Deck
+                {proj.status === "Completed" ? "View Report" : "View Deck"}
               </a>
             ) : (
               <div className="block text-center border border-[var(--color-theme-primary)] text-[var(--color-theme-primary)] opacity-50 cursor-not-allowed font-inter font-bold uppercase tracking-widest text-sm py-4">

@@ -8,6 +8,7 @@ const PHOTOS = [
   { src: "/IMG_7324.jpg", caption: "Grand Canal at blue hour. A barge, a lamppost, a moon." },
   { src: "/IMG_7393.jpg", caption: "The bike lane I take every morning." },
   { src: "/IMG_7311.jpg", caption: "Woodland path, somewhere near Milltown." },
+  { src: "/5DB07AE6-66FA-4C28-A61D-9F857B0CF8E0_1_102_o.jpeg", caption: "A white horse grazing in a buttercup field. Somewhere in the Irish countryside." },
   { src: "/IMG_7394.jpg", caption: "Cherry blossoms, sunset, utility wire. Still beautiful." },
   { src: "/IMG_7390.jpg", caption: "Pre-dawn. Trees as silhouettes." },
   { src: "/IMG_7312.jpg", caption: "Dublin suburb. That sky happened on a Tuesday." },

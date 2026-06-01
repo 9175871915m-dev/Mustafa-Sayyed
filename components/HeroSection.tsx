@@ -51,13 +51,13 @@ export default function HeroSection() {
       // Animate numbers
       gsap.utils.toArray(".hero-counter").forEach((counter: any) => {
         const target = parseInt(counter.getAttribute("data-target") || "0", 10);
-        gsap.to(counter, {
-          innerHTML: target,
+        const obj = { val: 0 };
+        gsap.to(obj, {
+          val: target,
           duration: 1.5,
-          snap: { innerHTML: 1 },
           ease: "power1.inOut",
-          onUpdate: function() {
-            counter.innerHTML = Math.round(this.targets()[0].innerHTML).toString();
+          onUpdate: () => {
+            counter.textContent = Math.round(obj.val).toString();
           }
         });
       });
@@ -129,7 +129,7 @@ export default function HeroSection() {
             </div>
             <div className="hero-stat w-px h-4 bg-[var(--color-theme-divider)]"></div>
             <div className="hero-stat flex items-center gap-2">
-              [ <span className="hero-counter font-bold" data-target="15">0</span>+ Projects ]
+              [ <span className="hero-counter font-bold" data-target="5">0</span>+ Projects ]
             </div>
             <div className="hero-stat w-px h-4 bg-[var(--color-theme-divider)]"></div>
             <div className="hero-stat flex items-center gap-2">
@@ -138,12 +138,13 @@ export default function HeroSection() {
           </div>
 
           <div className="flex gap-4 font-inter text-sm font-semibold tracking-wide">
-            <button
-              onClick={() => window.open("/Mustafa_Sayyed_CV.pdf", "_blank")} 
-              className="hero-cta bg-[var(--color-theme-primary)] text-white px-8 py-3.5 hover:bg-[var(--color-theme-secondary)] transition-colors"
+            <a
+              href="/MUSTAFA SAYYED.pdf"
+              download="MUSTAFA_SAYYED.pdf"
+              className="hero-cta bg-[var(--color-theme-primary)] text-white px-8 py-3.5 hover:bg-[var(--color-theme-secondary)] transition-colors text-center inline-block"
             >
               Download CV
-            </button>
+            </a>
             <button
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               className="hero-cta border border-[var(--color-theme-primary)] text-[var(--color-theme-primary)] px-8 py-3.5 hover:bg-[var(--color-theme-primary)] hover:text-white transition-colors"

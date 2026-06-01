@@ -4,6 +4,14 @@ import { useEffect, useRef } from "react";
 
 const REFERENCES_DATA = [
   {
+    text: "I had the pleasure of supporting Mustafa as part of the UCD Enfuse project with Expleo Group Ireland. Throughout the project, Mustafa demonstrated strong commitment, professionalism, and a clear ability to work effectively within a team. He contributed thoughtfully to the development of the business case and consistently approached challenges in a structured and practical way.\nIt was great to see his engagement with a real client brief and his ability to translate academic frameworks into applied, real-world solutions.",
+    name: "Mariana Wall",
+    role: "Project Coordinator | PMO Analyst | APMG Certified Change Practitioner",
+    org: "Expleo Group Ireland",
+    relationship: "Mentor, UCD Enfuse Project with Expleo Group Ireland (May 2026)",
+    featured: true
+  },
+  {
     text: "Mustafa's ability to analyze complex pricing structures and present them clearly was invaluable.",
     name: "Wilhelm David Tewari",
     role: "Rates Manager, ISG Transportation"
@@ -60,28 +68,57 @@ export default function ReferencesSection() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {REFERENCES_DATA.map((ref, idx) => (
-          <div key={idx} className="ref-card flex flex-col justify-between bg-[var(--color-theme-bg)] border border-[var(--color-theme-divider)] p-8 md:p-10 shadow-sm relative">
-            {/* Quote Icon */}
-            <svg className="absolute top-6 left-6 w-8 h-8 text-[var(--color-theme-divider)] opacity-50" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-            </svg>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {REFERENCES_DATA.map((ref, idx) => {
+          const isFeatured = !!(ref as any).featured;
+          return (
+            <div 
+              key={idx} 
+              className={`ref-card flex flex-col justify-between p-8 md:p-10 shadow-sm relative transition-all duration-300 ${
+                isFeatured 
+                  ? "bg-[var(--color-theme-surface)] border-2 border-[var(--color-theme-primary)] lg:col-span-3 lg:flex-row lg:items-center lg:gap-12" 
+                  : "bg-[var(--color-theme-bg)] border border-[var(--color-theme-divider)] lg:col-span-1"
+              }`}
+            >
+              {/* Quote Icon */}
+              <svg className="absolute top-6 left-6 w-8 h-8 text-[var(--color-theme-divider)] opacity-30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
 
-            <p className="font-cormorant italic text-xl md:text-2xl text-[var(--color-theme-text-primary)] leading-relaxed mb-10 pt-8 relative z-10">
-              &quot;{ref.text}&quot;
-            </p>
-            
-            <div className="pt-6 border-t border-[var(--color-theme-divider)]">
-              <span className="font-jetbrains text-xs tracking-wider uppercase text-[var(--color-theme-primary)] block font-bold mb-1">
-                — {ref.name}
-              </span>
-              <span className="font-inter text-xs text-[var(--color-theme-text-secondary)] block">
-                {ref.role}
-              </span>
+              <div className={isFeatured ? "lg:flex-1" : ""}>
+                {isFeatured && (
+                  <span className="inline-flex items-center gap-1.5 font-jetbrains text-[10px] uppercase font-bold tracking-widest text-[var(--color-theme-primary)] border border-[var(--color-theme-primary)] px-2.5 py-1 mb-6 relative z-10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-theme-primary)]" />
+                    Featured Industry Recommendation
+                  </span>
+                )}
+                <p className={`font-cormorant italic text-[var(--color-theme-text-primary)] leading-relaxed mb-8 pt-4 relative z-10 whitespace-pre-line ${
+                  isFeatured ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"
+                }`}>
+                  &quot;{ref.text}&quot;
+                </p>
+              </div>
+              
+              <div className={`pt-6 border-t border-[var(--color-theme-divider)] ${
+                isFeatured 
+                  ? "lg:border-t-0 lg:border-l lg:border-[var(--color-theme-divider)] lg:pt-0 lg:pl-10 lg:w-[320px] shrink-0" 
+                  : ""
+              }`}>
+                <span className="font-jetbrains text-xs tracking-wider uppercase text-[var(--color-theme-primary)] block font-bold mb-1">
+                  — {ref.name}
+                </span>
+                <span className="font-inter text-xs text-[var(--color-theme-text-secondary)] block font-semibold mb-1">
+                  {ref.role} {(ref as any).org ? `| ${(ref as any).org}` : ""}
+                </span>
+                {(ref as any).relationship && (
+                  <span className="font-inter text-[10px] text-[var(--color-theme-text-secondary)] block italic opacity-75 mt-2">
+                    {(ref as any).relationship}
+                  </span>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="mt-20 flex flex-col items-center justify-center text-center opacity-0 di-arrow" ref={(el) => {

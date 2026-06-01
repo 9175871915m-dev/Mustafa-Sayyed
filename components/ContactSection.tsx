@@ -49,12 +49,13 @@ export default function ContactSection() {
       </div>
 
       <div className="contact-stagger flex flex-col sm:flex-row gap-4 font-inter text-sm font-semibold tracking-wide">
-        <button
-          onClick={() => window.open("/Mustafa_Sayyed_CV.pdf", "_blank")} 
-          className="bg-[var(--color-theme-primary)] text-white px-10 py-4 hover:bg-[var(--color-theme-secondary)] transition-colors"
+        <a
+          href="/MUSTAFA SAYYED.pdf"
+          download="MUSTAFA_SAYYED.pdf"
+          className="bg-[var(--color-theme-primary)] text-white px-10 py-4 hover:bg-[var(--color-theme-secondary)] transition-colors text-center inline-block"
         >
           Download CV
-        </button>
+        </a>
         <button
           onClick={() => window.open(`https://${PROFILE_DATA.linkedin}`, "_blank")} 
           className="border border-[var(--color-theme-primary)] text-[var(--color-theme-primary)] px-10 py-4 hover:bg-[var(--color-theme-primary)] hover:text-white transition-colors"
